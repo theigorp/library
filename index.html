@@ -29,24 +29,24 @@
             <h2>Add new book</h2>
             <button class="close">&times;</button>
         </div>
-        <div class="form">
+        <form action="" class="form">
             <ul>
                 <li>
-                    <input type="text" name="title" id="title" placeholder="Title">
+                    <input type="text" name="title" id="title" placeholder="Title" required>
                 </li>
                 <li>
-                    <input type="text" name="author" id="author" placeholder="Author">
+                    <input type="text" name="author" id="author" placeholder="Author" required>
                 </li>
                 <li>
-                    <input type="number" name="pages" id="pages" placeholder="Number of pages">
+                    <input type="number" name="pages" id="pages" placeholder="Number of pages" required>
                 </li>
                 <li>
                     <label for="read">Have you read the book?</label>
                     <input type="checkbox" name="read" id="read">
                 </li>
             </ul>
-            <button class="submit">Submit</button>
-        </div>
+            <button class="submit" type="submit">Submit</button>
+        </form>
     </div>
     <div class="overlay"></div>
 </body>
