@@ -15,12 +15,11 @@ addBookButton.addEventListener('click', () => {
     let bookPages = prompt("pages");
     let bookRead = prompt('read');
 
-    let newBook = new Book(bookTitle, bookAuthor, bookPages, bookRead);
-    library.push(newBook);
-    console.log(newBook);
+    addBook(bookTitle, bookAuthor, bookPages, bookRead);
     console.log(library);
 });
 
-function addBooks() {
-    
+function addBook(title, author, pages, read) {
+    let newBook = new Book(title, author, pages, read);
+    library.push(newBook);
 }
