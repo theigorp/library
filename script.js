@@ -37,14 +37,14 @@ submitBook.addEventListener('click', () => {
     if(read.value == 'on') bookRead = true;
     else bookRead = false;
 
-    if(regex.test(bookTitle)==true || regex.test(bookAuthor) || regex.test(bookPages)) return;
+    if(regex.test(bookTitle)==true || regex.test(bookAuthor) || regex.test(bookPages)) console.log('fail')
     else {
         addBook(bookTitle, bookAuthor, bookPages, bookRead);
-        console.log(library);
 
         overlay.style.display = 'none';
         popup.style.display = 'none';
     }
+    console.log(library);
 });
 
 function addBook(title, author, pages, read) {
