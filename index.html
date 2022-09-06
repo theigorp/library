@@ -21,22 +21,28 @@
     </header>
     <main class="library">
         <div class="add-book">
-            <button>+ Add Book</button>
-            <ul>
-                <li>
-                    <input type="text" name="title" id="title" placeholder="Title">
-                </li>
-                <li>
-                    <input type="text" name="author" id="author" placeholder="Author">
-                </li>
-                <li>
-                    <input type="number" name="pages" id="pages" placeholder="Number of pages">
-                </li>
-                <li>
-                    <label for="read">Have you read the book?</label>
-                    <input type="checkbox" name="read" id="read">
-                </li>
-            </ul>
+            <button class="add">+ Add Book</button>
+            <div class="popup">
+                <div class="popup-header">
+                    <h2>Add new book</h2>
+                    <button class="close">X</button>
+                </div>
+                <ul>
+                    <li>
+                        <input type="text" name="title" id="title" placeholder="Title">
+                    </li>
+                    <li>
+                        <input type="text" name="author" id="author" placeholder="Author">
+                    </li>
+                    <li>
+                        <input type="number" name="pages" id="pages" placeholder="Number of pages">
+                    </li>
+                    <li>
+                        <label for="read">Have you read the book?</label>
+                        <input type="checkbox" name="read" id="read">
+                    </li>
+                </ul>
+            </div>
         </div>
     </main>
 </body>
