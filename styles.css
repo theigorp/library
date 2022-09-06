@@ -27,3 +27,19 @@ ul, li, ol {
 a {
     text-decoration: none;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    box-shadow: 0 4px 8px -6px gray;
+}
+
+.title {
+    font-size: 52px;
+    font-weight: 600;
+}
+
+.book-count p {
+    margin-top: 5px;
+}
