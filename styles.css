@@ -61,10 +61,6 @@ header {
     border-radius: 10px;
 }
 
-ul {
-    /* display: none; */
-}
-
 .popup {
     position: fixed;
     top: 40%;
