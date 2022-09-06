@@ -31,8 +31,9 @@ a {
 header {
     display: flex;
     justify-content: space-between;
+    background-color: #F1F2F6;
     padding: 15px;
-    box-shadow: 0 4px 8px -6px gray;
+    box-shadow: 0 4px 8px -6px black;
 }
 
 .title {
@@ -42,4 +43,25 @@ header {
 
 .book-count p {
     margin-top: 5px;
+}
+
+.library {
+    padding: 15px;
+    background-color: #AEB8FE;
+    z-index: -1;
+}
+
+.add-book {
+    padding: 15px;
+    height: 300px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #758BFD;
+    border-radius: 10px;
+}
+
+ul {
+    display: none;
 }
