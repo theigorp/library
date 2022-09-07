@@ -101,43 +101,44 @@ function addBook(title, author, pages, read) {
     parentDiv.appendChild(readButton);
     parentDiv.appendChild(removeButton);
 
-    changeReadState(newBook, readButton);
-
     //mark as read/unread on hover
-    // readButton.addEventListener('mouseover', () => {
-    //     if(readButton.textContent == 'Read')
-    //     {
-    //         readButton.textContent = 'Mark as unread?';
-    //         readButton.style.cursor = 'pointer'
-    //     }
-    //     else
-    //     {
-    //         readButton.textContent = 'Mark as read?';
-    //         readButton.style.cursor = 'pointer'
-    //     }
-    // });
-    // readButton.addEventListener('mouseleave', () => {
-    //     if(readButton.textContent == 'Mark as unread?')
-    //     {
-    //         readButton.textContent = 'Read';
-    //         readButton.style.cursor = 'pointer'
-    //     }
-    //     else
-    //     {
-    //         readButton.textContent = 'Not Read';
-    //         readButton.style.cursor = 'pointer'
-    //     }
-    // });
+    readButton.addEventListener('mouseover', () => {
+        if(readButton.textContent == 'Read')
+        {
+            readButton.textContent = 'Mark as unread?';
+            readButton.style.cursor = 'pointer'
+        }
+        else
+        {
+            readButton.textContent = 'Mark as read?';
+            readButton.style.cursor = 'pointer'
+        }
+    });
+    //zbog ovoga se tekst ne menja kako treba
+    readButton.addEventListener('mouseleave', () => {
+        if(readButton.textContent == 'Mark as unread?')
+        {
+            readButton.textContent = 'Read';
+            readButton.style.cursor = 'pointer'
+        }
+        else
+        {
+            readButton.textContent = 'Not Read';
+            readButton.style.cursor = 'pointer'
+        }
+    });
+
+    changeReadState(newBook, readButton);
 }
 
 function changeReadState(book, readBtn) {
     readBtn.addEventListener('click', () => {
-        if(readBtn.textContent == 'Read')
+        if(readBtn.textContent == 'Mark as unread?')
         {
             readBtn.textContent = 'Not Read';
             book.read = false;
         }
-        else if(readBtn.textContent == 'Not Read')
+        else if(readBtn.textContent == 'Mark as read?')
         {
             readBtn.textContent = 'Read';
             book.read = true;
