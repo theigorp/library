@@ -75,7 +75,7 @@ function addBook(title, author, pages, read) {
 
     library.forEach(book => {
         const parentDiv = document.createElement('div');
-        libraryElement.appendChild(parentDiv);
+        libraryElement.insertBefore(parentDiv, addBookCard);
         parentDiv.classList.add('book-div');
         const bookTitle = document.createElement('p');
         const bookAuthor = document.createElement('p');
@@ -100,3 +100,4 @@ function addBook(title, author, pages, read) {
 //write a function to see if two books are the same
 
 const libraryElement = document.querySelector('.library');
+const addBookCard = document.querySelector('.add-book');

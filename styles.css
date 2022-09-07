@@ -49,14 +49,13 @@ header {
     padding: 15px 200px;
     background-color: #AEB8FE;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
-    gap: 50px;
+    grid-template-columns: repeat(auto-fit, 230px);
+    gap: 20px;
 }
 
 .add-book, .book-div {
     padding: 15px;
     height: 300px;
-    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
