@@ -54,8 +54,8 @@ submitBook.addEventListener('click', () => {
     let bookPages = pages.value;
     let bookRead;
     let regex = /^\s*$/g;
-    if(read.value == 'on') bookRead = true;
-    else bookRead = false;
+    if(read.checked) bookRead = true;
+    else if(!read.checked) bookRead = false;
 
     if(regex.test(bookTitle)==true || regex.test(bookAuthor) || regex.test(bookPages))
     {
@@ -75,7 +75,6 @@ function addBook(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     library.push(newBook);
 
-    
     const parentDiv = document.createElement('div');
     libraryElement.insertBefore(parentDiv, addBookCard);
     parentDiv.classList.add('book-div');
@@ -101,8 +100,51 @@ function addBook(title, author, pages, read) {
     parentDiv.appendChild(bookPages);
     parentDiv.appendChild(readButton);
     parentDiv.appendChild(removeButton);
+
+    changeReadState(newBook, readButton);
+
+    //mark as read/unread on hover
+    // readButton.addEventListener('mouseover', () => {
+    //     if(readButton.textContent == 'Read')
+    //     {
+    //         readButton.textContent = 'Mark as unread?';
+    //         readButton.style.cursor = 'pointer'
+    //     }
+    //     else
+    //     {
+    //         readButton.textContent = 'Mark as read?';
+    //         readButton.style.cursor = 'pointer'
+    //     }
+    // });
+    // readButton.addEventListener('mouseleave', () => {
+    //     if(readButton.textContent == 'Mark as unread?')
+    //     {
+    //         readButton.textContent = 'Read';
+    //         readButton.style.cursor = 'pointer'
+    //     }
+    //     else
+    //     {
+    //         readButton.textContent = 'Not Read';
+    //         readButton.style.cursor = 'pointer'
+    //     }
+    // });
 }
 
+function changeReadState(book, readBtn) {
+    readBtn.addEventListener('click', () => {
+        if(readBtn.textContent == 'Read')
+        {
+            readBtn.textContent = 'Not Read';
+            book.read = false;
+        }
+        else if(readBtn.textContent == 'Not Read')
+        {
+            readBtn.textContent = 'Read';
+            book.read = true;
+        }
+        console.log(library)
+    });
+}
 
 //only for when there are already books in library array
 function populateLibrary() {
@@ -138,5 +180,6 @@ function populateLibrary() {
 //write a function to see if two books are the same
 
 //write a function for changin read state
+
 //eventListener on hover - mark as read/unread text change and color change; on click change state true/false
 //remove book function 
