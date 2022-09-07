@@ -71,7 +71,7 @@ submitBook.addEventListener('click', () => {
 
 function addBook(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
-    library.push(newBook);
+    library.unshift(newBook);
 
     library.forEach(book => {
         const parentDiv = document.createElement('div');
