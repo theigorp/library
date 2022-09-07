@@ -27,7 +27,6 @@ close.addEventListener('click', () => {
     popup.style.display = 'none';
 });
 
-
 submitBook.addEventListener('click', () => {
     let bookTitle = title.value;
     let bookAuthor = author.value;
@@ -37,14 +36,18 @@ submitBook.addEventListener('click', () => {
     if(read.value == 'on') bookRead = true;
     else bookRead = false;
 
-    if(regex.test(bookTitle)==true || regex.test(bookAuthor) || regex.test(bookPages)) console.log('fail')
+    if(regex.test(bookTitle)==true || regex.test(bookAuthor) || regex.test(bookPages))
+    {
+        const errorMessage = document.querySelector('.errorMessage');
+        errorMessage.style.display = 'block';
+    }
     else {
         addBook(bookTitle, bookAuthor, bookPages, bookRead);
+        console.log(library);
 
         overlay.style.display = 'none';
         popup.style.display = 'none';
     }
-    console.log(library);
 });
 
 function addBook(title, author, pages, read) {
