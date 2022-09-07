@@ -35,6 +35,8 @@ const read = document.querySelector('#read');
 const overlay = document.querySelector('.overlay');
 const popup = document.querySelector('.popup');
 const close = document.querySelector('.close');
+const libraryElement = document.querySelector('.library');
+const addBookCard = document.querySelector('.add-book');
 
 addBookButton.addEventListener('click', () => {
     overlay.style.display = 'block';
@@ -72,7 +74,9 @@ submitBook.addEventListener('click', () => {
 function addBook(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     library.push(newBook);
+}
 
+function populateLibrary() {
     library.forEach(book => {
         const parentDiv = document.createElement('div');
         libraryElement.insertBefore(parentDiv, addBookCard);
@@ -83,11 +87,16 @@ function addBook(title, author, pages, read) {
         const readButton = document.createElement('button');
         const removeButton = document.createElement('button');
 
+        readButton.classList.add('read');
+        removeButton.classList.add('remove');
+
         bookTitle.textContent = book.title;
         bookAuthor.textContent = book.author;
-        bookPages.textContent = book.pages;
-        readButton.textContent = book.read;
+        bookPages.textContent = book.pages + ' pages';
         removeButton.textContent = 'Remove';
+
+        if(book.read == true) readButton.textContent = 'Read';
+        else readButton.textContent = 'Not Read';
 
         parentDiv.appendChild(bookTitle);
         parentDiv.appendChild(bookAuthor);
@@ -97,7 +106,6 @@ function addBook(title, author, pages, read) {
     });
 }
 
-//write a function to see if two books are the same
+populateLibrary();
 
-const libraryElement = document.querySelector('.library');
-const addBookCard = document.querySelector('.add-book');
+//write a function to see if two books are the same
