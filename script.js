@@ -1,4 +1,23 @@
-let library = [];
+let library = [
+    {
+        title: 'Atomic Habits',
+        author: 'James Clear',
+        pages: '240',
+        read: false
+    },
+    {
+        title: 'Principles',
+        author: 'Ray Dalio',
+        pages: '450',
+        read: true
+    },
+    {
+        title: 'The Lean Startup',
+        author: 'Eric Ries',
+        pages: '220',
+        read: false
+    }
+];
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -59,3 +78,4 @@ function addBook(title, author, pages, read) {
 
 const libraryElement = document.querySelector('.library');
 
+function addBookToGrid()
