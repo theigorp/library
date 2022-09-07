@@ -1,22 +1,22 @@
 let library = [
-    {
-        title: 'Atomic Habits',
-        author: 'James Clear',
-        pages: '240',
-        read: false
-    },
-    {
-        title: 'Principles',
-        author: 'Ray Dalio',
-        pages: '450',
-        read: true
-    },
-    {
-        title: 'The Lean Startup',
-        author: 'Eric Ries',
-        pages: '220',
-        read: false
-    }
+    // {
+    //     title: 'Atomic Habits',
+    //     author: 'James Clear',
+    //     pages: '240',
+    //     read: false
+    // },
+    // {
+    //     title: 'Principles',
+    //     author: 'Ray Dalio',
+    //     pages: '450',
+    //     read: true
+    // },
+    // {
+    //     title: 'The Lean Startup',
+    //     author: 'Eric Ries',
+    //     pages: '220',
+    //     read: false
+    // }
 ];
 
 function Book(title, author, pages, read) {
@@ -74,8 +74,37 @@ submitBook.addEventListener('click', () => {
 function addBook(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     library.push(newBook);
+
+    
+    const parentDiv = document.createElement('div');
+    libraryElement.insertBefore(parentDiv, addBookCard);
+    parentDiv.classList.add('book-div');
+    const bookTitle = document.createElement('p');
+    const bookAuthor = document.createElement('p');
+    const bookPages = document.createElement('p');
+    const readButton = document.createElement('button');
+    const removeButton = document.createElement('button');
+
+    readButton.classList.add('read');
+    removeButton.classList.add('remove');
+
+    bookTitle.textContent = newBook.title;
+    bookAuthor.textContent = newBook.author;
+    bookPages.textContent = newBook.pages + ' pages';
+    removeButton.textContent = 'Remove';
+
+    if(newBook.read == true) readButton.textContent = 'Read';
+    else readButton.textContent = 'Not Read';
+
+    parentDiv.appendChild(bookTitle);
+    parentDiv.appendChild(bookAuthor);
+    parentDiv.appendChild(bookPages);
+    parentDiv.appendChild(readButton);
+    parentDiv.appendChild(removeButton);
 }
 
+
+//only for when there are already books in library array
 function populateLibrary() {
     library.forEach(book => {
         const parentDiv = document.createElement('div');
@@ -106,6 +135,8 @@ function populateLibrary() {
     });
 }
 
-populateLibrary();
-
 //write a function to see if two books are the same
+
+//write a function for changin read state
+//eventListener on hover - mark as read/unread text change and color change; on click change state true/false
+//remove book function 
