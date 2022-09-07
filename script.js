@@ -62,6 +62,7 @@ submitBook.addEventListener('click', () => {
     }
     else {
         addBook(bookTitle, bookAuthor, bookPages, bookRead);
+        addBookToGrid();
         console.log(library);
 
         overlay.style.display = 'none';
@@ -72,10 +73,48 @@ submitBook.addEventListener('click', () => {
 function addBook(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     library.push(newBook);
+
+    library.forEach(book => {
+        const parentDiv = document.createElement('div');
+        libraryElement.appendChild(parentDiv);
+        parentDiv.classList.add('book-div');
+        const bookTitle = document.createElement('p');
+        const bookAuthor = document.createElement('p');
+        const bookPages = document.createElement('p');
+        const readButton = document.createElement('button');
+        const removeButton = document.createElement('button');
+
+        bookTitle.textContent = book.title;
+        bookAuthor.textContent = book.author;
+        bookPages.textContent = book.pages;
+        readButton.textContent = book.read;
+
+        parentDiv.appendChild(bookTitle);
+        parentDiv.appendChild(bookAuthor);
+        parentDiv.appendChild(bookPages);
+        parentDiv.appendChild(readButton);
+        parentDiv.appendChild(removeButton);
+    });
 }
 
 //write a function to see if two books are the same
 
 const libraryElement = document.querySelector('.library');
 
-function addBookToGrid()
+function addBookToGrid() {
+    library.forEach(book => {
+        const parentDiv = document.createElement('div');
+        libraryElement.appendChild(parentDiv);
+        const bookTitle = document.createElement('p');
+        const bookAuthor = document.createElement('p');
+        const bookPages = document.createElement('p');
+        const readButton = document.createElement('button');
+        const removeButton = document.createElement('button');
+
+        parentDiv.appendChild(bookTitle);
+        parentDiv.appendChild(bookAuthor);
+        parentDiv.appendChild(bookPages);
+        parentDiv.appendChild(readButton);
+        parentDiv.appendChild(removeButton);
+    });
+}
