@@ -62,7 +62,6 @@ submitBook.addEventListener('click', () => {
     }
     else {
         addBook(bookTitle, bookAuthor, bookPages, bookRead);
-        addBookToGrid();
         console.log(library);
 
         overlay.style.display = 'none';
@@ -88,6 +87,7 @@ function addBook(title, author, pages, read) {
         bookAuthor.textContent = book.author;
         bookPages.textContent = book.pages;
         readButton.textContent = book.read;
+        removeButton.textContent = 'Remove';
 
         parentDiv.appendChild(bookTitle);
         parentDiv.appendChild(bookAuthor);
@@ -100,21 +100,3 @@ function addBook(title, author, pages, read) {
 //write a function to see if two books are the same
 
 const libraryElement = document.querySelector('.library');
-
-function addBookToGrid() {
-    library.forEach(book => {
-        const parentDiv = document.createElement('div');
-        libraryElement.appendChild(parentDiv);
-        const bookTitle = document.createElement('p');
-        const bookAuthor = document.createElement('p');
-        const bookPages = document.createElement('p');
-        const readButton = document.createElement('button');
-        const removeButton = document.createElement('button');
-
-        parentDiv.appendChild(bookTitle);
-        parentDiv.appendChild(bookAuthor);
-        parentDiv.appendChild(bookPages);
-        parentDiv.appendChild(readButton);
-        parentDiv.appendChild(removeButton);
-    });
-}
