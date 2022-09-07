@@ -51,6 +51,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, 230px);
     gap: 20px;
+    height: calc(100vh - 132px);
 }
 
 .add-book, .book-div {
