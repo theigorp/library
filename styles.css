@@ -48,6 +48,8 @@ header {
 .library {
     padding: 15px;
     background-color: #AEB8FE;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
 }
 
 .add-book {

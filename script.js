@@ -57,3 +57,5 @@ function addBook(title, author, pages, read) {
 
 //write a function to see if two books are the same
 
+const libraryElement = document.querySelector('.library');
+
