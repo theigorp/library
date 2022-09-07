@@ -61,6 +61,20 @@ header {
     border-radius: 10px;
 }
 
+.add-book .add {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.add:hover {
+    background-color: rgb(245, 235, 235);
+}
+
 .popup {
     position: fixed;
     top: 40%;

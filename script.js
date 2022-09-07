@@ -54,3 +54,6 @@ function addBook(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     library.push(newBook);
 }
+
+//write a function to see if two books are the same
+
