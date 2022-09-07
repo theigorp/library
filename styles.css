@@ -32,7 +32,7 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: #F1F2F6;
-    padding: 15px;
+    padding: 15px 200px;
     box-shadow: 0 4px 8px -6px black;
 }
 
@@ -46,7 +46,7 @@ header {
 }
 
 .library {
-    padding: 15px;
+    padding: 15px 200px;
     background-color: #AEB8FE;
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
