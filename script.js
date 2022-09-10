@@ -63,6 +63,7 @@ function resetInput(title, author, pages, read) {
 function addBook(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
     library.push(newBook);
+    loadBookNumbers(library);
 
     const parentDiv = document.createElement('div');
     libraryElement.insertBefore(parentDiv, addBookCard);
@@ -126,4 +127,28 @@ function getIndexAttribute(library, removeButton) {
     {
         removeButton.setAttribute('index', i);
     }
+}
+
+function loadBookNumbers(library) {
+    const booksRead = document.querySelector('.books-read');
+    const booksToRead = document.querySelector('.books-toread');
+    const totalEl = document.querySelector('.total');
+    let readCount = 0, toReadCount = 0, total = 0;
+
+    library.forEach(book => {
+        if(book.read == true) 
+        {
+            readCount++;
+            booksRead.textContent = readCount;
+            total = readCount + toReadCount;
+            totalEl.textContent = total;
+        }
+        else if(book.read == false)
+        {
+            toReadCount++;
+            booksToRead.textContent = toReadCount;
+            total = readCount + toReadCount;
+            totalEl.textContent = total;
+        }
+    });
 }
