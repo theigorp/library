@@ -66,10 +66,18 @@ submitBook.addEventListener('click', () => {
         addBook(bookTitle, bookAuthor, bookPages, bookRead);
         console.log(library);
 
+        resetInput(title, author, pages, read);
         overlay.style.display = 'none';
         popup.style.display = 'none';
     }
 });
+
+function resetInput(title, author, pages, read) {
+    title.value = '';
+    author.value = '';
+    pages.value = '';
+    read.value = '';
+}
 
 function addBook(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read);
