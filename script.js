@@ -109,86 +109,51 @@ function addBook(title, author, pages, read) {
     parentDiv.appendChild(readButton);
     parentDiv.appendChild(removeButton);
 
-    //mark as read/unread on hover
-    readButton.addEventListener('mouseover', () => {
-        if(readButton.textContent == 'Read')
-        {
-            readButton.textContent = 'Mark as unread?';
-            readButton.style.cursor = 'pointer'
-        }
-        else
-        {
-            readButton.textContent = 'Mark as read?';
-            readButton.style.cursor = 'pointer'
-        }
-    });
-    //zbog ovoga se tekst ne menja kako treba
-    readButton.addEventListener('mouseleave', () => {
-        if(readButton.textContent == 'Mark as unread?')
-        {
-            readButton.textContent = 'Read';
-            readButton.style.cursor = 'pointer'
-        }
-        else
-        {
-            readButton.textContent = 'Not Read';
-            readButton.style.cursor = 'pointer'
-        }
-    });
-
     changeReadState(newBook, readButton);
+
+    // mark as read/unread on hover
+    // readButton.addEventListener('mouseover', () => {
+    //     if(readButton.textContent == 'Read')
+    //     {
+    //         readButton.textContent = 'Mark as unread?';
+    //         readButton.style.cursor = 'pointer';
+    //     }
+    //     else
+    //     {
+    //         readButton.textContent = 'Mark as read?';
+    //         readButton.style.cursor = 'pointer';
+    //     }
+    // });
+    // zbog ovoga se tekst ne menja kako treba
+    // readButton.addEventListener('mouseleave', () => {
+    //     if(readButton.textContent == 'Mark as unread?')
+    //     {
+    //         readButton.textContent = 'Read';
+    //         readButton.style.cursor = 'pointer'
+    //     }
+    //     else
+    //     {
+    //         readButton.textContent = 'Not Read';
+    //         readButton.style.cursor = 'pointer'
+    //     }
+    // });
 }
 
 function changeReadState(book, readBtn) {
     readBtn.addEventListener('click', () => {
-        if(readBtn.textContent == 'Mark as unread?')
+        if(readBtn.textContent == 'Read')
         {
             readBtn.textContent = 'Not Read';
             book.read = false;
         }
-        else if(readBtn.textContent == 'Mark as read?')
+        else if(readBtn.textContent == 'Not Read')
         {
             readBtn.textContent = 'Read';
             book.read = true;
         }
-        console.log(library)
+        console.log(library);
     });
 }
-
-//only for when there are already books in library array
-function populateLibrary() {
-    library.forEach(book => {
-        const parentDiv = document.createElement('div');
-        libraryElement.insertBefore(parentDiv, addBookCard);
-        parentDiv.classList.add('book-div');
-        const bookTitle = document.createElement('p');
-        const bookAuthor = document.createElement('p');
-        const bookPages = document.createElement('p');
-        const readButton = document.createElement('button');
-        const removeButton = document.createElement('button');
-
-        readButton.classList.add('read');
-        removeButton.classList.add('remove');
-
-        bookTitle.textContent = book.title;
-        bookAuthor.textContent = book.author;
-        bookPages.textContent = book.pages + ' pages';
-        removeButton.textContent = 'Remove';
-
-        if(book.read == true) readButton.textContent = 'Read';
-        else readButton.textContent = 'Not Read';
-
-        parentDiv.appendChild(bookTitle);
-        parentDiv.appendChild(bookAuthor);
-        parentDiv.appendChild(bookPages);
-        parentDiv.appendChild(readButton);
-        parentDiv.appendChild(removeButton);
-    });
-}
-
 //write a function to see if two books are the same
 
-//write a function for changin read state
-
-//eventListener on hover - mark as read/unread text change and color change; on click change state true/false
 //remove book function 

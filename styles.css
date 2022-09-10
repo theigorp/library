@@ -230,6 +230,10 @@ label {
     margin-top: auto;
 }
 
+.read:hover {
+    background-color: #6ed46b;
+}
+
 .book-div .remove {
     color: white;
     background-color: rgb(218, 57, 57);
