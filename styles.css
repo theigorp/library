@@ -28,6 +28,10 @@ a {
     text-decoration: none;
 }
 
+body {
+    background-color: #AEB8FE;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -51,7 +55,8 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, 230px);
     gap: 20px;
-    height: calc(100vh - 132px);
+    /* height: calc(100% - 132px);
+    padding-bottom: 59vh; */
 }
 
 .add-book, .book-div {

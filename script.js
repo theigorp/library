@@ -1,23 +1,4 @@
-let library = [
-    // {
-    //     title: 'Atomic Habits',
-    //     author: 'James Clear',
-    //     pages: '240',
-    //     read: false
-    // },
-    // {
-    //     title: 'Principles',
-    //     author: 'Ray Dalio',
-    //     pages: '450',
-    //     read: true
-    // },
-    // {
-    //     title: 'The Lean Startup',
-    //     author: 'Eric Ries',
-    //     pages: '220',
-    //     read: false
-    // }
-];
+let library = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -112,33 +93,6 @@ function addBook(title, author, pages, read) {
 
     changeReadState(newBook, readButton);
     removeBook(removeButton, library);
-
-    // mark as read/unread on hover
-    // readButton.addEventListener('mouseover', () => {
-    //     if(readButton.textContent == 'Read')
-    //     {
-    //         readButton.textContent = 'Mark as unread?';
-    //         readButton.style.cursor = 'pointer';
-    //     }
-    //     else
-    //     {
-    //         readButton.textContent = 'Mark as read?';
-    //         readButton.style.cursor = 'pointer';
-    //     }
-    // });
-    // zbog ovoga se tekst ne menja kako treba
-    // readButton.addEventListener('mouseleave', () => {
-    //     if(readButton.textContent == 'Mark as unread?')
-    //     {
-    //         readButton.textContent = 'Read';
-    //         readButton.style.cursor = 'pointer'
-    //     }
-    //     else
-    //     {
-    //         readButton.textContent = 'Not Read';
-    //         readButton.style.cursor = 'pointer'
-    //     }
-    // });
 }
 
 function changeReadState(book, readBtn) {
@@ -173,6 +127,3 @@ function getIndexAttribute(library, removeButton) {
         removeButton.setAttribute('index', i);
     }
 }
-//write a function to see if two books are the same
-
-//remove book function 
