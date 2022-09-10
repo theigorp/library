@@ -111,7 +111,7 @@ function addBook(title, author, pages, read) {
     parentDiv.appendChild(removeButton);
 
     changeReadState(newBook, readButton);
-    removeBook(newBook, parentDiv);
+    removeBook(removeButton, library);
 
     // mark as read/unread on hover
     // readButton.addEventListener('mouseover', () => {
@@ -157,13 +157,14 @@ function changeReadState(book, readBtn) {
     });
 }
 
-function removeBook(book, parentDiv) {
-    parentDiv.addEventListener('click', (e) => {
-        if(e.target == '<button class="remove">Remove</button>')
-        {
+function removeBook(removeButton, library) {
+    removeButton.addEventListener('click', (e) => {
+        removeButton.parentElement.remove();
+        currentIndex = removeButton.getAttribute('index');
 
-        }
-    })
+        library.splice(currentIndex, 1);
+        console.log(library);
+    });
 }
 
 function getIndexAttribute(library, removeButton) {
