@@ -99,6 +99,7 @@ function addBook(title, author, pages, read) {
     bookAuthor.textContent = newBook.author;
     bookPages.textContent = newBook.pages + ' pages';
     removeButton.textContent = 'Remove';
+    getIndexAttribute(library, removeButton);
 
     if(newBook.read == true) readButton.textContent = 'Read';
     else readButton.textContent = 'Not Read';
@@ -110,6 +111,7 @@ function addBook(title, author, pages, read) {
     parentDiv.appendChild(removeButton);
 
     changeReadState(newBook, readButton);
+    removeBook(newBook, parentDiv);
 
     // mark as read/unread on hover
     // readButton.addEventListener('mouseover', () => {
@@ -153,6 +155,22 @@ function changeReadState(book, readBtn) {
         }
         console.log(library);
     });
+}
+
+function removeBook(book, parentDiv) {
+    parentDiv.addEventListener('click', (e) => {
+        if(e.target == '<button class="remove">Remove</button>')
+        {
+
+        }
+    })
+}
+
+function getIndexAttribute(library, removeButton) {
+    for(let i = 0; i < library.length; i++)
+    {
+        removeButton.setAttribute('index', i);
+    }
 }
 //write a function to see if two books are the same
 
